@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@resources/styles/style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.Controller">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Tweet Analyzer" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="170.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fitHeight="45.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@resources/twitter_logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="infoText" text="Choose the dataset" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin></Label>
+            <Button fx:id="likesBtn" mnemonicParsing="false" styleClass="option" text="Users with most likes" visible="false" GridPane.rowIndex="2" />
+            <Button fx:id="retweetsBtn" layoutX="25.0" layoutY="198.0" mnemonicParsing="false" styleClass="option" text="Users with most retweets" GridPane.rowIndex="3" />
+            <Button fx:id="repliesBtn" layoutX="25.0" layoutY="74.0" mnemonicParsing="false" styleClass="option" text="Users with most replies" GridPane.rowIndex="4" />
+            <Button fx:id="timeBtn" layoutX="25.0" layoutY="74.0" mnemonicParsing="false" styleClass="option" text="Tweets with timestamps" GridPane.rowIndex="5" />
+            <Button fx:id="lengthBtn" layoutX="25.0" layoutY="74.0" mnemonicParsing="false" styleClass="option" text="Tweets with their length" GridPane.rowIndex="6" />
+            <TextField fx:id="usersField" disable="true" maxWidth="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label maxWidth="150.0" text="Number of top users to show (leave empty for all)" textAlignment="RIGHT" textFill="#909090" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" disable="true" maxWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" layoutX="445.0" layoutY="144.0" maxWidth="120.0" text="Click to choose date (don't write!)" textAlignment="RIGHT" textFill="#909090" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="generateBtn" defaultButton="true" disable="true" mnemonicParsing="false" text="Generate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets right="25.0" />
+               </GridPane.margin></Button>
+            <TextField fx:id="lengthField" disable="true" layoutX="343.0" layoutY="145.0" maxWidth="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label layoutX="445.0" layoutY="144.0" maxWidth="150.0" text="Length value (leave empty for all)" textAlignment="RIGHT" textFill="#909090" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="cancelBtn" disable="true" mnemonicParsing="false" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button fx:id="uploadBtn" layoutX="25.0" layoutY="110.0" mnemonicParsing="false" styleClass="option" text="Upload dataset into HDFS" GridPane.rowIndex="2" />
+            <Button fx:id="changeDatasetBtn" mnemonicParsing="false" text="New dataset" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </GridPane>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="progressLabel" text="Results will be displayed below" GridPane.valignment="CENTER" />
+            <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <content>
+                  <Label fx:id="outputLabel" text="Label">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </Label>
+               </content>
+            </ScrollPane>
+            <Button fx:id="downloadBtn" mnemonicParsing="false" text="Download" GridPane.halignment="RIGHT">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>

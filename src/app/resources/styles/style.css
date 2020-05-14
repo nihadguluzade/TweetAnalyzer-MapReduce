@@ -1,0 +1,7 @@
+.option {
+    -fx-min-width: 190;
+}
+
+.button-selected {
+    -fx-border-color: crimson;
+}

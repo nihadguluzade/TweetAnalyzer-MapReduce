@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TweetAnalyzer-MapReduce:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TweetAnalyzer_MapReduce_jar</output-path>
+    <root id="archive" name="TweetAnalyzer-MapReduce.jar">
+      <element id="module-output" name="TweetAnalyzer-MapReduce" />
+    </root>
+  </artifact>
+</component>
